@@ -1,16 +1,26 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+//
+import Header from './components/Header'
+import Footer from './components/Footer'
+//
+import { Vazirmatn, Lalezar } from "next/font/google";
+const vazir = Vazirmatn({
+  subsets: ['arabic'],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-vazir'
+})
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const Lale = Lalezar({
+  subsets: ['arabic'], 
+  weight : '400',
+  display: 'swap',
+  variable: '--font-lalezar'
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,11 +33,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="fa" dir="rtl"
+    className={`${vazir.variable}`}>
+      <body>
+       <section className="relative min-h-screen  bg-black overflow-hidden">
+        {/* bg light */}
+          <div className="pointer-events-none absolute inset-0 flex items-start-safe top-40 justify-center">
+            <div className="h-96 w-96 rounded-full bg-cyan-400 opacity-20 blur-3xl"></div>
+            <div className="h-60 w-60 rounded-full bg-indigo-300 opacity-20 blur-3xl scale-110"></div>
+          </div>
+
+        {/* page content */}
+          <div>
+            <Header />
+            {children}
+            <Footer />
+          </div>
+
+       </section>
       </body>
     </html>
   );
