@@ -2,9 +2,14 @@
 
 import Nav from './Nav'
 import Link from 'next/link';
+
+
 // import './HeaderResponsive.css'
+import { MdMenu, MdClose } from "react-icons/md";
+
+
 import { useState, useEffect , useRef} from 'react';
-import { section } from 'framer-motion/client';
+
 
 const Header_Mobile = ()=>{
   const R = useRef(null)
@@ -17,16 +22,12 @@ const Header_Mobile = ()=>{
         <button className='z-125 absolute top-0 right-0'
         onClick={()=>{
         setVis(ps => !ps)
-        }}>menu</button>
+        }}>{!Vis ? <MdMenu size={30}/> : <MdClose size={30}/>}</button>
       </section>
      
       {Vis? (<section ref={R}
        className='bg-black z-100 w-[100vw] h-[100vh] absolute right-0 top-0 p-4'>
 
-        <section className='flex items-center justify-center m-6'>
-          <div>login /sign up</div>
-        </section>
-        
         <section>
         <nav className="  h-[70vh] font-extrabold text-2xl
         flex flex-col justify-evenly items-center">
@@ -37,6 +38,10 @@ const Header_Mobile = ()=>{
           <Link href={'/Contact'}>تماس با ما</Link>
           <Link href={'/Support'}>پشتیبانی</Link>
         </nav>
+        </section>
+
+        <section className='flex items-center justify-center m-6'>
+          <div>ورود / نام نویسی </div>
         </section>
 
       </section>):('')}
@@ -53,8 +58,8 @@ const Header_desk = ()=>{
       <section
        className='flex flex-row-reverse w-full items-center justify-end'>
 
-        <section className='flex items-center justify-center m-6 cursor-pointer rounded-2xl bg-cyan-800 px-8 py-2 shadow-2xl hover:scale-105 hover:bg-cyan-600 transition-[0.3s]'>
-          <div>login /sign up</div>
+        <section className='whitespace-nowrap flex items-center justify-center m-6 cursor-pointer rounded-2xl bg-cyan-800 px-8 py-2 shadow-2xl hover:scale-105 hover:bg-cyan-600 transition-[0.3s]'>
+          <div>ورود / نام نویسی </div>
         </section>
         
         <section className=' w-full px-4 text-md opacity-75'>

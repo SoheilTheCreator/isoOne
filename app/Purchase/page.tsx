@@ -76,7 +76,7 @@ export default function Purchase() {
         </form>
 
         <div className="text-black mt-4 text-xl">
-          <a className="underline" href="">برای مشاوره و استعلام اینجا کلیک کنید</a>
+          <a className="underline" href="/Contact">برای مشاوره و استعلام اینجا کلیک کنید</a>
         </div>
       </div>
   );

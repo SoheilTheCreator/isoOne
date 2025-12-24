@@ -6,10 +6,10 @@ export default function Home() {
       <main className="flex-col flex sm:flex-row-reverse mt-16">
        
       
-        <figure className="md:max-w-[45%] flex flex-col justify-center items-center">
-          <ImageCard />
+        <figure className="md:max-w-[45%] w-[80%] flex flex-col justify-center items-center">
+          <ImageCard url={"/ind01.jpg"} alt="broken"/>
           <br /><br />          
-          <div className="z-10">
+          <div className="z-10 mx-4">
             <p className="w-full text-center mb-2">انتخاب اول بیش از 25 مشتری</p>
             <div className="flex flex-row-reverse 
             justify-center items-center">
@@ -27,11 +27,11 @@ export default function Home() {
         </figure>
 
 
-         <section className="sm:w-[65vw] w-full">
+         <section className="">
           <div style={{fontFamily: 'var(--font-vazir)'}} 
-          className="text-[clamp(2rem,10vw,8rem)] leading-tight my-4 font-extrabold px-4 text-center ">یک قدم فراتر از ایمنی معمول</div>
+          className="text-[clamp(2rem,10vw,8rem)] leading-tight my-4 font-extrabold px-4 text-center ">یک قدم فراتر از ایمنی </div>
          <div className="my-8 py-8 flex justify-center items-center">
-            <ButtonCta />
+            <ButtonCta label="عضو خانواده ایزوگام یک شوید " action="redirct" url={'./Purchase'}/>
          </div>
         </section>
       </main>
