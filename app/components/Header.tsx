@@ -15,6 +15,12 @@ const Header_Mobile = ()=>{
   const R = useRef(null)
   const [Vis, setVis] = useState<boolean>(false)
   
+  useEffect(()=>{},[Vis])
+
+  const closeMenu = ()=>{
+    setVis(false)
+  }
+
   return(
     <section className=''>
      
@@ -31,12 +37,12 @@ const Header_Mobile = ()=>{
         <section>
         <nav className="  h-[70vh] font-extrabold text-2xl
         flex flex-col justify-evenly items-center">
-          <Link href={'/'}>خانه</Link>
-          <Link href={'/Purchase'}>ثبت سفارش</Link>
-          <Link href={'/Products'}>محصولات</Link>
-          <Link href={'/About'}>درباره ما</Link>
-          <Link href={'/Contact'}>تماس با ما</Link>
-          <Link href={'/Support'}>پشتیبانی</Link>
+          <Link href={'/'} onClick={closeMenu}>خانه</Link>
+          <Link href={'/Purchase'} onClick={closeMenu}>ثبت سفارش</Link>
+          <Link href={'/Products'} onClick={closeMenu}>محصولات</Link>
+          <Link href={'/About'} onClick={closeMenu}>درباره ما</Link>
+          <Link href={'/Contact'} onClick={closeMenu}>تماس با ما</Link>
+          <Link href={'/Support'} onClick={closeMenu}>پشتیبانی</Link>
         </nav>
         </section>
 
